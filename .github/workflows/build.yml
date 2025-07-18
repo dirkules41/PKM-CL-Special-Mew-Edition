@@ -17,14 +17,14 @@ jobs:
     - name: 🛠️ Install dependencies
       run: |
         sudo apt update
-        sudo apt install -y build-essential git libpng-dev
+        sudo apt install -y build-essential git libpng-dev wget
 
-    - name: 🧱 Install RGBDS
+    - name: Install RGBDS v0.5.2
       run: |
-        git clone https://github.com/gbdev/rgbds.git
-        cd rgbds
-        make
-        sudo make install
+        RGBDS_VERSION=0.5.2
+        wget https://github.com/gbdev/rgbds/releases/download/v${RGBDS_VERSION}/rgbds-${RGBDS_VERSION}-x86_64-linux.tar.gz
+        tar -xzf rgbds-${RGBDS_VERSION}-x86_64-linux.tar.gz
+        sudo cp rgbds-${RGBDS_VERSION}-x86_64-linux/bin/* /usr/local/bin/
 
     - name: 🔨 Build ROM
       run: make
