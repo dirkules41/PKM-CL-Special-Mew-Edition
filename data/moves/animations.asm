@@ -4597,6 +4597,17 @@ BattleAnim_BeatUp:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_AuraSphere:
+    	anim_1gfx ANIM_GFX_OBJECTS
+    	anim_sound 6, 2, SFX_METRONOME
+    	anim_obj ANIM_OBJ_SWIFT, 64, 88, $4
+    	anim_wait 4
+    	anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
+    	anim_wait 4
+    	anim_obj ANIM_OBJ_SWIFT, 64, 76, $4
+    	anim_wait 64
+    	anim_ret
+
 BattleAnimSub_Drain:
 	anim_obj ANIM_OBJ_DRAIN, 132, 44, $0
 	anim_obj ANIM_OBJ_DRAIN, 132, 44, $8
@@ -4824,15 +4835,4 @@ BattleAnim_ShowMon_1:
 	anim_wait 4
 	anim_incobj 1
 	anim_wait 1
-	anim_ret
-
-BattleAnim_AuraSphere
-	anim_1gfx ANIM_GFX_OBJECTS
-	anim_sound 6, 2, SFX_METRONOME
-	anim_obj ANIM_OBJ_SWIFT, 64, 88, $4
-	anim_wait 4
-	anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
-	anim_wait 4
-	anim_obj ANIM_OBJ_SWIFT, 64, 76, $4
-	anim_wait 64
 	anim_ret
