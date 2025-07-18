@@ -253,7 +253,7 @@ BattleAnimations::
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
-	dw BattleAnim_AuraSphere
+	dw BattleAnim_OriginForce
 	assert_table_length NUM_ATTACKS + 1
 	dw BattleAnim_253
 	dw BattleAnim_254
@@ -4597,7 +4597,7 @@ BattleAnim_BeatUp:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-BattleAnim_AuraSphere:
+BattleAnim_OriginForce:
 	anim_1gfx ANIM_GFX_OBJECTS
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $3, $0
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
