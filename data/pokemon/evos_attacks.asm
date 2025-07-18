@@ -2255,7 +2255,7 @@ MewEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 5, ANCIENTPOWER
-	db 6, AURA_SPHERE
+	db 6, ORIGIN_FORCE
 	db 10, TRANSFORM
 	db 20, MEGA_PUNCH
 	db 30, METRONOME
