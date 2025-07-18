@@ -4599,14 +4599,17 @@ BattleAnim_BeatUp:
 
 BattleAnim_AuraSphere:
 	anim_1gfx ANIM_GFX_OBJECTS
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_BLUE_GREEN, $0, $3, $0
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
 	anim_sound 6, 2, SFX_METRONOME
 	anim_obj ANIM_OBJ_SWIFT, 64, 88, $4
-	anim_wait 4
-	anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
-	anim_wait 4
-	anim_obj ANIM_OBJ_SWIFT, 64, 76, $4
+	anim_wait 2
+    	anim_obj ANIM_OBJ_SWIFT, 64, 80, $4
+    	anim_wait 2
+   	anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
+ 	anim_obj ANIM_OBJ_SPARKLE, 60, 78, $2
+    	anim_wait 1
+    	anim_obj ANIM_OBJ_SPARKLE, 68, 82, $2
 	anim_wait 64
 	anim_ret
 
