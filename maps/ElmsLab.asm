@@ -179,6 +179,18 @@ CyndaquilPokeBallScript:
 	waitsfx
 	promptbutton
 	givepoke MEW, 5, LEFTOVERS
+
+; Setze Mews DVs auf shiny (Atk=15, Def=10, Spd=10, Spcl=10)
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1DVs
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+
+	ld [hl], $FA  ; Atk/Def
+	inc hl
+	ld [hl], $AA  ; Spd/Spcl
+
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
