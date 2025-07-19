@@ -29,7 +29,8 @@ jobs:
         rgbasm -V  # Version anzeigen zur Sicherheit
 
     - name: 🔨 Build ROM
-      run: make
+      run: make clean
+           make
 
     - name: 📦 Upload ROM Artifact
       uses: actions/upload-artifact@v4
