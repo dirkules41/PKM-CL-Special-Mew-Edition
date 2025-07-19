@@ -178,7 +178,7 @@ CyndaquilPokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	giveshinypoke MEW, 5, LEFTOVERS
+	givepoke MEW, 5, LEFTOVERS
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
