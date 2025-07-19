@@ -1,4 +1,5 @@
-; Sets the DVs of the last received Pokémon to shiny (15/10/10/10)
+SECTION "SetShinyDVs", ROM0
+
 SetShinyDVs::
     ld hl, wPartyMon1DVs
     ld a, [wPartyCount]
