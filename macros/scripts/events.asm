@@ -315,6 +315,21 @@ endc
 endc
 ENDM
 
+giveshinypoke: MACRO
+if _NARG == 2
+	givepoke \1, \2
+	special SetShinyDVs
+elif _NARG == 3
+	givepoke \1, \2, \3
+	special SetShinyDVs
+elif _NARG == 5
+	givepoke \1, \2, \3, TRUE, \4, \5
+	special SetShinyDVs
+else
+	fail "Unsupported giveshinypoke call"
+endc
+ENDM
+
 	const giveegg_command ; $2e
 giveegg: MACRO
 	db giveegg_command
