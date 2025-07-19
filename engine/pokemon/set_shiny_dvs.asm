@@ -1,11 +1,14 @@
-; SetShinyDVs: Sets the DVs of the last party Pokémon to shiny-compatible
+; Sets the DVs of the last received Pokémon to shiny (15/10/10/10)
 SetShinyDVs::
-	ld a, [wPartyCount]
-	dec a
-	ld hl, wPartyMon1DVs
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	ld [hl], $FA
-	inc hl
-	ld [hl], $AA
-	ret
+    ld hl, wPartyMon1DVs
+    ld a, [wPartyCount]
+    dec a
+    ld bc, PARTYMON_STRUCT_LENGTH
+    call AddNTimes
+    ; Set DVs for shiny: ATK/DEF = 0x2A, SPD/SPC = 0xAA
+    ld a, $2A
+    ld [hl], a
+    inc hl
+    ld a, $AA
+    ld [hl], a
+    ret
