@@ -8,6 +8,7 @@ ENDM
 
 SpecialsPointers::
 	add_special WarpToSpawnPoint
+	add_special SetShinyDVs
 
 ; Communications
 	add_special SetBitsForLinkTradeRequest
