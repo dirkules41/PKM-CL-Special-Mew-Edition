@@ -434,3 +434,5 @@ TrainerHouse:
 	ld a, [sMysteryGiftTrainerHouseFlag]
 	ld [wScriptVar], a
 	jp CloseSRAM
+
+INCLUDE "engine/pokemon/set_shiny_dvs.asm"
