@@ -1,4 +1,5 @@
 INCLUDE "constants.asm"
+INCLUDE "engine/pokemon/set_shiny_dvs.asm"
 
 
 SECTION "bank1", ROMX
