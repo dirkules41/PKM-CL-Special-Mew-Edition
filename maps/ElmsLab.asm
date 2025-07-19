@@ -179,6 +179,7 @@ CyndaquilPokeBallScript:
 	waitsfx
 	promptbutton
 	givepoke MEW, 5, LEFTOVERS
+	special SetShinyDVs
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
