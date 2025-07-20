@@ -4643,22 +4643,35 @@ BattleAnim_EternalPower:
 	anim_wait 32
 	anim_ret
 
+
 BattleAnim_AuraForce:
-	anim_1gfx ANIM_GFX_OBJECTS
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $3, $0
+	; Ladephase
+	anim_1gfx ANIM_GFX_CHARGE
+	anim_sound 0, 0, SFX_CHARGE
+	anim_obj ANIM_OBJ_ABSORB_CENTER, 64, 88, $0
+	anim_obj ANIM_OBJ_CHARGE, 64, 88, $0
+	anim_wait 24
+
+	; Psy-Aura-Effekt
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-	anim_sound 6, 2, SFX_METRONOME
-	anim_obj ANIM_OBJ_SWIFT, 64, 88, $4
-	anim_wait 2
-    	anim_obj ANIM_OBJ_SWIFT, 64, 80, $4
-    	anim_wait 2
-   	anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
- 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 60, 78, $2
-    	anim_wait 1
-    	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 68, 82, $2
-	anim_wait 1
-	anim_wait 32
+	anim_wait 16
+
+	; Seismic Toss-artiger Angriff
+	anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_STRENGTH
+	anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 88, $1
+	anim_wait 64
+	anim_incobj 1 ; startet zweite Phase von Seismic Toss
+	anim_wait 20
+
+	; Treffer
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $20, $2, $0
+	anim_wait 16
 	anim_ret
+
 
 BattleAnimSub_Drain:
 	anim_obj ANIM_OBJ_DRAIN, 132, 44, $0
