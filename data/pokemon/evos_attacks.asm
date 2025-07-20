@@ -2254,9 +2254,7 @@ MewtwoEvosAttacks:
 MewEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 5, ORIGIN_FORCE
-	db 5, ETERNALPOWER
-	db 5, AURA_FORCE
+	db 5, CONFUSION
 	db 10, AURA_FORCE
 	db 15, SWIFT
 	db 20, FLAME_WHEEL
