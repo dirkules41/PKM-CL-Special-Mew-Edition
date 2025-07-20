@@ -4617,7 +4617,13 @@ BattleAnim_OriginForce:
 	anim_wait 6
 	anim_obj ANIM_OBJ_SWIFT, 70, 92, $4
 
-	; WAVE-Psykraft
+	; Dreifache WAVE-Psykraft
+	anim_sound 0, 1, SFX_PSYCHIC
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
+	anim_wait 6
+	anim_sound 0, 1, SFX_PSYCHIC
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
+	anim_wait 6
 	anim_sound 0, 1, SFX_PSYCHIC
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
 	anim_wait 8
@@ -4652,7 +4658,13 @@ BattleAnim_EternalPower:
 	anim_obj ANIM_OBJ_ANCIENTPOWER, 124, 54, $20
 	anim_wait 6
 
-	; Energie-Wellen für die Macht (wie Psybeam)
+	; Dreifache WAVE-Psykraft
+	anim_sound 6, 2, SFX_PSYCHIC
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
+	anim_wait 6
+	anim_sound 6, 2, SFX_PSYCHIC
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
+	anim_wait 6
 	anim_sound 6, 2, SFX_PSYCHIC
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
 	anim_wait 8
