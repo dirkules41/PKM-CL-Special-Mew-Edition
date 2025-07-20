@@ -253,9 +253,9 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw OriginForceDescription
+	dw EternalPowerDescription
+	dw AuraForceDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -1273,3 +1273,11 @@ BeatUpDescription:
 OriginForceDescription:
 	db   "An attack that"
 	next "never misses.@"
+
+EternalPowerDescription
+	db   "An attack that may"
+	next "raise all stats.@"
+
+AuraForceDescription
+	db   "An attack that may"
+	next "cause flinching.@"
