@@ -4627,20 +4627,38 @@ BattleAnim_OriginForce:
 
 
 BattleAnim_EternalPower:
-	anim_1gfx ANIM_GFX_OBJECTS
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $3, $0
+	; GFX: Rocks + Psychic Licht
+	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_PSYCHIC
+
+	; Düstere Stimmung, wie bei Psybeam
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-	anim_sound 6, 2, SFX_METRONOME
-	anim_obj ANIM_OBJ_SWIFT, 64, 88, $4
-	anim_wait 2
-    	anim_obj ANIM_OBJ_SWIFT, 64, 80, $4
-    	anim_wait 2
-   	anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
- 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 60, 78, $2
-    	anim_wait 1
-    	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 68, 82, $2
-	anim_wait 1
-	anim_wait 32
+
+	; Erdbebenartiges Zittern
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $28, $2, $10
+	anim_sound 0, 0, SFX_SPITE
+
+	; Felsen steigen auf, wie bei AncientPower
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 64, 88, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 56, 80, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 72, 80, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 48, 72, $4
+	anim_wait 4
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 80, 72, $4
+
+	; Energie-Wellen für die Macht (wie Psybeam)
+	anim_wait 8
+	anim_sound 6, 2, SFX_PSYCHIC
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
+	anim_wait 8
+
+	; Lichtblitz am Ende (große Energie)
+	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
+	anim_wait 24
+
 	anim_ret
 
 
