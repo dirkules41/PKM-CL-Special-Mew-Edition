@@ -1272,10 +1272,10 @@ OriginForceDescription:
 	db   "An attack that"
 	next "never misses.@"
 
-EternalPowerDescription
+EternalPowerDescription:
 	db   "An attack that may"
 	next "raise all stats.@"
 
-AuraForceDescription
+AuraForceDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
