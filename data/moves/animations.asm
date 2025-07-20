@@ -4645,32 +4645,32 @@ BattleAnim_EternalPower:
 
 
 BattleAnim_AuraForce:
-	; 1. Aufladungseffekt (Licht sammeln)
+	; Ladeeffekt
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_sound 0, 0, SFX_CHARGE
 	anim_obj ANIM_OBJ_ABSORB_CENTER, 64, 88, $0
-	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $0
-	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $8
+	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $00
+	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $08
 	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $10
-	anim_wait 20
+	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $18
+	anim_wait 40
 
-	; 2. Dunkler, mystischer Hintergrund (Aura-Stimmung)
+	; Mystischer Hintergrund
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
 	anim_wait 8
 
-	; 3. Angriff wie bei Seismic Toss
+	; Wurf der Kugel – Seismic Toss Kugel
 	anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_STRENGTH
-	anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 104, $1
-	anim_wait 96
-	anim_incobj 1
-	anim_wait 10
+	anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 104, $1 ; wirft Kugel
+	anim_wait 128
+	anim_incobj 1 ; beendet Animation der Kugel
+
+	; Aufprall
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
-
-	; 4. Bildschirm wackelt (Impact)
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $10, $2, $10
 	anim_wait 16
 
