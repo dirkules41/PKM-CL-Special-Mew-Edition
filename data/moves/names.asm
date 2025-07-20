@@ -252,4 +252,6 @@ MoveNames::
 	li "WHIRLPOOL"
 	li "BEAT UP"
 	li "ORIGIN FORCE"
+	li "ETERNAL POWER"
+	li "AURA FORCE"
 	assert_list_length NUM_ATTACKS
