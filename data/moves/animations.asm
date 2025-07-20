@@ -4645,30 +4645,27 @@ BattleAnim_EternalPower:
 
 
 BattleAnim_AuraForce:
-	; Ladeeffekt
-	anim_1gfx ANIM_GFX_CHARGE
-	anim_sound 0, 0, SFX_CHARGE
-	anim_obj ANIM_OBJ_ABSORB_CENTER, 64, 88, $0
-	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $00
-	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $08
-	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $10
-	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $18
-	anim_wait 40
+	; GFX: Psy-Effekte + Seismic Toss Kugel
+	anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_PSYCHIC
 
-	; Mystischer Hintergrund
-	anim_1gfx ANIM_GFX_PSYCHIC
+	; Startsound (mystisch)
+	anim_sound 6, 2, SFX_METRONOME
+
+	; Hintergrundeffekte wie bei Psybeam
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-	anim_wait 8
 
-	; Wurf der Kugel – Seismic Toss Kugel
-	anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_HIT
+	; Leichtes Bildschirmwackeln
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
+	anim_wait 12
+
+	; Aura-Kugel wird geworfen (Seismic Toss-Globus)
 	anim_sound 0, 0, SFX_STRENGTH
-	anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 104, $1 ; wirft Kugel
+	anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 104, $1 ; Flugbewegung
 	anim_wait 128
-	anim_incobj 1 ; beendet Animation der Kugel
+	anim_incobj 1 ; beendet Kugel
 
-	; Aufprall
+	; Treffer-Impact
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $10, $2, $10
