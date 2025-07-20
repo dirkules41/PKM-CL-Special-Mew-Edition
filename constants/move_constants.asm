@@ -258,6 +258,8 @@
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
 	const ORIGIN_FORCE ; fc
+	const ETERNAL_POWER; fd
+	const AURA_FORCE   ; fe
 NUM_ATTACKS EQU const_value - 1
 
 ; Battle animations use the same constants as the moves up to this point
