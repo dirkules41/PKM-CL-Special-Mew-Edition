@@ -254,9 +254,9 @@ BattleAnimations::
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
 	dw BattleAnim_OriginForce
+	dw BattleAnim_EternalPower
+	dw BattleAnim_AuraForce
 	assert_table_length NUM_ATTACKS + 1
-	dw BattleAnim_253
-	dw BattleAnim_254
 	dw BattleAnim_SweetScent2
 	assert_table_length $100
 ; $100
@@ -285,8 +285,6 @@ BattleAnimations::
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
 BattleAnim_0:
-BattleAnim_253:
-BattleAnim_254:
 BattleAnim_MirrorMove:
 	anim_ret
 
@@ -4598,6 +4596,40 @@ BattleAnim_BeatUp:
 	anim_ret
 
 BattleAnim_OriginForce:
+	anim_1gfx ANIM_GFX_OBJECTS
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $3, $0
+	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+	anim_sound 6, 2, SFX_METRONOME
+	anim_obj ANIM_OBJ_SWIFT, 64, 88, $4
+	anim_wait 2
+    	anim_obj ANIM_OBJ_SWIFT, 64, 80, $4
+    	anim_wait 2
+   	anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
+ 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 60, 78, $2
+    	anim_wait 1
+    	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 68, 82, $2
+	anim_wait 1
+	anim_wait 32
+	anim_ret
+
+BattleAnim_EternalPower:
+	anim_1gfx ANIM_GFX_OBJECTS
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $3, $0
+	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+	anim_sound 6, 2, SFX_METRONOME
+	anim_obj ANIM_OBJ_SWIFT, 64, 88, $4
+	anim_wait 2
+    	anim_obj ANIM_OBJ_SWIFT, 64, 80, $4
+    	anim_wait 2
+   	anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
+ 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 60, 78, $2
+    	anim_wait 1
+    	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 68, 82, $2
+	anim_wait 1
+	anim_wait 32
+	anim_ret
+
+BattleAnim_AuraForce:
 	anim_1gfx ANIM_GFX_OBJECTS
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $3, $0
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
