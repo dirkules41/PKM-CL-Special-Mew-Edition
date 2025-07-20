@@ -252,7 +252,7 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw AuraSphereDescription
+	dw OriginForceDescription
 	assert_table_length NUM_ATTACKS
 	dw MoveFDDescription
 	dw MoveFEDescription
@@ -1270,6 +1270,6 @@ BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
 
-AuraSphereDescription:
+OriginForceDescription:
 	db   "An attack that"
 	next "never misses.@"
