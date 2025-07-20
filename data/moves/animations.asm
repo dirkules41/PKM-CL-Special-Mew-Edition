@@ -4623,7 +4623,6 @@ BattleAnim_OriginForce:
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
 	anim_wait 8
 
-	anim_hit
 	anim_wait 16
 	anim_ret
 
