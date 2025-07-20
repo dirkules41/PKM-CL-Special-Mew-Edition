@@ -4604,19 +4604,18 @@ BattleAnim_OriginForce:
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
 
-	; Dynamischer Flugpfad: erst hoch, dann runter
-	anim_obj ANIM_OBJ_SWIFT, 64, 100, $0 ; Stern von unten hoch
-	anim_wait 6
-	anim_obj ANIM_OBJ_SWIFT, 68, 76, $8  ; Stern von rechts oben
-	anim_wait 6
-	anim_obj ANIM_OBJ_SWIFT, 60, 84, $10 ; Stern mittig
-	anim_wait 6
-	anim_obj ANIM_OBJ_SWIFT, 70, 92, $18 ; weiter oben
-	anim_wait 6
-
 	; Bildschirm wackelt wie bei Cross Chop
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $58, $2, $0
 	anim_wait 24
+
+	; Dynamischer Flugpfad: erst hoch, dann runter
+	anim_obj ANIM_OBJ_SWIFT, 64, 100, $4
+	anim_wait 6
+	anim_obj ANIM_OBJ_SWIFT, 68, 76, $4
+	anim_wait 6
+	anim_obj ANIM_OBJ_SWIFT, 60, 84, $4
+	anim_wait 6
+	anim_obj ANIM_OBJ_SWIFT, 70, 92, $4
 
 	; WAVE-Psykraft
 	anim_sound 0, 1, SFX_PSYCHIC
