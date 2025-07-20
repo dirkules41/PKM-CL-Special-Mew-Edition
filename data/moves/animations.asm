@@ -4595,22 +4595,38 @@ BattleAnim_BeatUp:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+
 BattleAnim_OriginForce:
-	anim_1gfx ANIM_GFX_OBJECTS
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $3, $0
-	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_PSYCHIC
 	anim_sound 6, 2, SFX_METRONOME
-	anim_obj ANIM_OBJ_SWIFT, 64, 88, $4
-	anim_wait 2
-    	anim_obj ANIM_OBJ_SWIFT, 64, 80, $4
-    	anim_wait 2
-   	anim_obj ANIM_OBJ_SWIFT, 64, 72, $4
- 	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 60, 78, $2
-    	anim_wait 1
-    	anim_obj ANIM_OBJ_SHOOTING_SPARKLE, 68, 82, $2
-	anim_wait 1
-	anim_wait 32
+
+	; Psybeam-Style Hintergrundeffekte
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+
+	; Dynamischer Flugpfad: erst hoch, dann runter
+	anim_obj ANIM_OBJ_SWIFT, 64, 100, $0 ; Stern von unten hoch
+	anim_wait 6
+	anim_obj ANIM_OBJ_SWIFT, 68, 76, $8  ; Stern von rechts oben
+	anim_wait 6
+	anim_obj ANIM_OBJ_SWIFT, 60, 84, $10 ; Stern mittig
+	anim_wait 6
+	anim_obj ANIM_OBJ_SWIFT, 70, 92, $18 ; weiter oben
+	anim_wait 6
+
+	; Bildschirm wackelt wie bei Cross Chop
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $58, $2, $0
+	anim_wait 24
+
+	; WAVE-Psykraft
+	anim_sound 0, 1, SFX_PSYCHIC
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
+	anim_wait 8
+
+	anim_hit
+	anim_wait 16
 	anim_ret
+
 
 BattleAnim_EternalPower:
 	anim_1gfx ANIM_GFX_OBJECTS
