@@ -4649,7 +4649,7 @@ BattleAnim_AuraForce:
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_sound 0, 0, SFX_CHARGE
 	anim_obj ANIM_OBJ_ABSORB_CENTER, 64, 88, $0
-	anim_obj ANIM_OBJ_CHARGE, 64, 88, $0
+	anim_obj ANIM_SFX_CHARGE, 64, 88, $0
 	anim_wait 24
 
 	; Psy-Aura-Effekt
