@@ -4645,31 +4645,35 @@ BattleAnim_EternalPower:
 
 
 BattleAnim_AuraForce:
-	; Ladephase
+	; 1. Aufladungseffekt (Licht sammeln)
 	anim_1gfx ANIM_GFX_CHARGE
 	anim_sound 0, 0, SFX_CHARGE
 	anim_obj ANIM_OBJ_ABSORB_CENTER, 64, 88, $0
-	anim_obj ANIM_SFX_CHARGE, 64, 88, $0
-	anim_wait 24
-
-	; Psy-Aura-Effekt
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-	anim_wait 16
-
-	; Seismic Toss-artiger Angriff
-	anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_HIT
-	anim_sound 0, 0, SFX_STRENGTH
-	anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 88, $1
-	anim_wait 64
-	anim_incobj 1 ; startet zweite Phase von Seismic Toss
+	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $0
+	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $8
+	anim_obj ANIM_OBJ_SOLAR_BEAM_CHARGE, 64, 88, $10
 	anim_wait 20
 
-	; Treffer
-	anim_sound 0, 1, SFX_KARATE_CHOP
+	; 2. Dunkler, mystischer Hintergrund (Aura-Stimmung)
+	anim_1gfx ANIM_GFX_PSYCHIC
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+	anim_wait 8
+
+	; 3. Angriff wie bei Seismic Toss
+	anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_STRENGTH
+	anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 104, $1
+	anim_wait 96
+	anim_incobj 1
+	anim_wait 10
+	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $20, $2, $0
+
+	; 4. Bildschirm wackelt (Impact)
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $10, $2, $10
 	anim_wait 16
+
 	anim_ret
 
 
