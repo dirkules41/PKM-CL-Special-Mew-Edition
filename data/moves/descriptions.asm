@@ -260,8 +260,6 @@ MoveDescriptions::
 	dw Move00Description
 	assert_table_length $100
 
-MoveFDDescription:
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
