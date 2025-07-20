@@ -4638,19 +4638,21 @@ BattleAnim_EternalPower:
 	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $28, $2, $10
 	anim_sound 0, 0, SFX_SPITE
 
-	; Felsen steigen auf, wie bei AncientPower
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 64, 88, $4
-	anim_wait 4
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 56, 80, $4
-	anim_wait 4
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 72, 80, $4
-	anim_wait 4
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 48, 72, $4
-	anim_wait 4
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 80, 72, $4
+	; Felsen fliegen in Richtung Gegner
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 64, 104, $20
+	anim_wait 6
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 76, 94, $20
+	anim_wait 6
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 88, 84, $20
+	anim_wait 6
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 100, 74, $20
+	anim_wait 6
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 112, 64, $20
+	anim_wait 6
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 124, 54, $20
+	anim_wait 6
 
 	; Energie-Wellen für die Macht (wie Psybeam)
-	anim_wait 8
 	anim_sound 6, 2, SFX_PSYCHIC
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
 	anim_wait 8
