@@ -2255,7 +2255,7 @@ MewEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 5, ORIGIN_FORCE
-	db 5, ETERNAL_POWER
+	db 5, ETERNALPOWER
 	db 5, AURA_FORCE
 	db 10, AURA_FORCE
 	db 15, SWIFT
@@ -2264,7 +2264,7 @@ MewEvosAttacks:
 	db 30, ANCIENTPOWER
 	db 35, ORIGIN_FORCE
 	db 40, PSYCHIC_M
-	db 45, ETERNAL_POWER
+	db 45, ETERNALPOWER
 	db 50, SACRED_FIRE
 	db 0 ; no more level-up moves
 
