@@ -2254,13 +2254,18 @@ MewtwoEvosAttacks:
 MewEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
-	db 5, ANCIENTPOWER
-	db 6, ORIGIN_FORCE
-	db 10, TRANSFORM
-	db 20, MEGA_PUNCH
-	db 30, METRONOME
+	db 5, ORIGIN_FORCE
+	db 5, ETERNAL_POWER
+	db 5, AURA_FORCE
+	db 10, AURA_FORCE
+	db 15, SWIFT
+	db 20, FLAME_WHEEL
+	db 25, PSYBEAM
+	db 30, ANCIENTPOWER
+	db 35, ORIGIN_FORCE
 	db 40, PSYCHIC_M
-	db 50, RECOVER
+	db 45, ETERNAL_POWER
+	db 50, SACRED_FIRE
 	db 0 ; no more level-up moves
 
 ChikoritaEvosAttacks:
