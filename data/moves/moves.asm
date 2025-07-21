@@ -264,7 +264,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   60, FIGHTING,     100, 15,  20
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            20, DARK,         100, 10,   0
-	move ORIGIN_FORCE, EFFECT_ALWAYS_HIT, 	      80, FIGHTING, 	  100, 15,   0
+	move AURA_BURST,   EFFECT_ALWAYS_HIT, 	      80, FIGHTING, 	  100, 15,   0
 	move ETERNALPOWER, EFFECT_ALL_UP_HIT, 	      80, ROCK, 	      100, 10,  20
-	move AURA_FORCE,   EFFECT_FLINCH_HIT, 	      40, ROCK, 	      100, 20,  20
+	move SPHERE_TOSS,  EFFECT_FLINCH_HIT, 	      40, ROCK, 	      100, 20,  20
 	assert_table_length NUM_ATTACKS
