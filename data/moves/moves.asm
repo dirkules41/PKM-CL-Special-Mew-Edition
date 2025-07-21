@@ -72,7 +72,7 @@ Moves:
 	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,        100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,          100, 15,  10
 	move BLIZZARD,     EFFECT_FREEZE_HIT,        120, ICE,           85,  5,  10
-	move PSYBEAM,      EFFECT_CONFUSE_HIT,        70, PSYCHIC_TYPE, 100, 20,  10
+	move PSYBEAM,      EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE, 100, 20,  10
 	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     65, WATER,        100, 20,  10
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    65, ICE,          100, 20,  10
 	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,        90,  5,   0
@@ -105,7 +105,7 @@ Moves:
 	move FISSURE,      EFFECT_OHKO,                1, GROUND,        30,  5,   0
 	move DIG,          EFFECT_FLY,                70, GROUND,       100, 20,   0
 	move TOXIC,        EFFECT_TOXIC,               0, POISON,        85, 10,   0
-	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE, 100, 25,  10
+	move CONFUSION,    EFFECT_CONFUSE_HIT,        40, PSYCHIC_TYPE, 100, 25,  10
 	move PSYCHIC_M,    EFFECT_CONFUSE_HIT,        90, PSYCHIC_TYPE, 100, 15,  10
 	move HYPNOSIS,     EFFECT_SLEEP,               0, PSYCHIC_TYPE,  60, 20,   0
 	move MEDITATE,     EFFECT_ATTACK_UP,           0, PSYCHIC_TYPE, 100, 40,   0
@@ -264,7 +264,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   60, FIGHTING,     100, 15,  20
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            20, DARK,         100, 10,   0
-	move AURA_BURST,   EFFECT_ALWAYS_HIT, 	      80, FIGHTING, 	  100, 15,   0
-	move ETERNALPOWER, EFFECT_ALL_UP_HIT, 	      80, ROCK, 	      100, 10,  20
-	move SPHERE_TOSS,  EFFECT_FLINCH_HIT, 	      40, ROCK, 	      100, 20,  20
+	move AURA_BURST,   EFFECT_ALWAYS_HIT,	      80, FIGHTING,	100, 15,   0
+	move ETERNALPOWER, EFFECT_ALL_UP_HIT,	      80, ROCK,		100, 10,  20
+	move SPHERE_TOSS,  EFFECT_FLINCH_HIT,	      40, ROCK,		100, 20,  20
 	assert_table_length NUM_ATTACKS
