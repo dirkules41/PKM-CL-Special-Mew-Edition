@@ -253,9 +253,9 @@ BattleAnimations::
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
-	dw BattleAnim_OriginForce
+	dw BattleAnim_AuraBurst
 	dw BattleAnim_EternalPower
-	dw BattleAnim_AuraForce
+	dw BattleAnim_SphereToss
 	assert_table_length NUM_ATTACKS + 1
 	dw BattleAnim_SweetScent2
 	assert_table_length $100
@@ -4596,7 +4596,7 @@ BattleAnim_BeatUp:
 	anim_ret
 
 
-BattleAnim_OriginForce:
+BattleAnim_AuraBurst:
 	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_PSYCHIC
 	anim_sound 6, 2, SFX_METRONOME
 
@@ -4676,7 +4676,7 @@ BattleAnim_EternalPower:
 	anim_ret
 
 
-BattleAnim_AuraForce:
+BattleAnim_SphereToss:
 	; GFX: Psy-Effekte + Seismic Toss Kugel
 	anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_PSYCHIC
 
