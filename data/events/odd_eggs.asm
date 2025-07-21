@@ -10,26 +10,26 @@ OddEggProbabilities:
 	table_width 2, OddEggProbabilities
 prob_total = 0
 ; Pichu
-	prob 7
-	prob 2
+	prob 0
+	prob 100
 ; Cleffa
-	prob 14
-	prob 5
+	prob 0
+	prob 0
 ; Igglybuff
-	prob 14
-	prob 5
+	prob 0
+	prob 0
 ; Smoochum
-	prob 12
-	prob 4
+	prob 0
+	prob 0
 ; Magby
-	prob 9
-	prob 3
+	prob 0
+	prob 0
 ; Elekid
-	prob 11
-	prob 3
+	prob 0
+	prob 0
 ; Tyrogue
-	prob 8
-	prob 3
+	prob 0
+	prob 0
 	assert_table_length NUM_ODD_EGGS
 	assert prob_total == 100, "OddEggProbabilities do not sum to 100%!"
 
