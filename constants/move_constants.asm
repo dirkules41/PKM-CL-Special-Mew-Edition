@@ -257,9 +257,9 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
-	const ORIGIN_FORCE ; fc
+	const AURA_BURST   ; fc
 	const ETERNALPOWER ; fd
-	const AURA_FORCE   ; fe
+	const SPHERE_TOSS  ; fe
 NUM_ATTACKS EQU const_value - 1
 
 ; Battle animations use the same constants as the moves up to this point
