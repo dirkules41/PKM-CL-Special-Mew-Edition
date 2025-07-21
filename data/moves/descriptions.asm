@@ -252,9 +252,9 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw OriginForceDescription
+	dw AuraBurstDescription
 	dw EternalPowerDescription
-	dw AuraForceDescription
+	dw SphereTossDescription
 	assert_table_length NUM_ATTACKS
 	dw MoveFFDescription
 	dw Move00Description
@@ -1268,7 +1268,7 @@ BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
 
-OriginForceDescription:
+AuraBurstDescription:
 	db   "An attack that"
 	next "never misses.@"
 
@@ -1276,6 +1276,6 @@ EternalPowerDescription:
 	db   "An attack that may"
 	next "raise all stats.@"
 
-AuraForceDescription:
+SphereTossDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
