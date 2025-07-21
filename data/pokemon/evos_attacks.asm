@@ -2253,14 +2253,14 @@ MewtwoEvosAttacks:
 
 MewEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
-	db 5, CONFUSION
-	db 10, AURA_FORCE
-	db 15, SWIFT
+	db 1, CONFUSION
+	db 5, KINESIS
+	db 10, SWIFT
+	db 15, SPHERE_TOSS
 	db 20, FLAME_WHEEL
 	db 25, PSYBEAM
 	db 30, ANCIENTPOWER
-	db 35, ORIGIN_FORCE
+	db 35, AURA_BURST
 	db 40, PSYCHIC_M
 	db 45, ETERNALPOWER
 	db 50, SACRED_FIRE
