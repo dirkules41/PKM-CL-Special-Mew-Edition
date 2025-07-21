@@ -399,7 +399,7 @@ ElmScript_NoRoomForEverstone:
 ElmGiveMasterBallScript:
 	writetext ElmGiveMasterBallText1
 	promptbutton
-	verbosegiveitem MASTER_BALL
+	verbosegiveitem MASTER_BALL, 5
 	iffalse .notdone
 	setevent EVENT_GOT_MASTER_BALL_FROM_ELM
 	writetext ElmGiveMasterBallText2
@@ -499,9 +499,9 @@ AideScript_GiveYouBalls:
 	opentext
 	writetext AideText_GiveYouBalls
 	promptbutton
-	getitemname STRING_BUFFER_4, POKE_BALL
+	getitemname STRING_BUFFER_4, MASTER_BALL
 	scall AideScript_ReceiveTheBalls
-	giveitem POKE_BALL, 5
+	giveitem MASTER_BALL, 5
 	writetext AideText_ExplainBalls
 	promptbutton
 	itemnotify
@@ -1131,37 +1131,26 @@ AideText_AfterTheft:
 	done
 
 ElmGiveMasterBallText1:
-	text "ELM: Hi, <PLAY_G>!"
-	line "Thanks to you, my"
+    	text "ELM: Hi, <PLAY_G>!"
+    	line "Thanks to you, my"
 
-	para "research is going"
-	line "great!"
+    	para "research is going"
+    	line "great!"
 
-	para "Take this as a"
-	line "token of my"
-	cont "appreciation."
-	done
+   	 para "Take this as a"
+    	line "token of my"
+    	cont "appreciation."
+    	done
 
 ElmGiveMasterBallText2:
-	text "The MASTER BALL is"
-	line "the best!"
+   	 text "Here are 5 more"
+    	line "Master Balls!"
 
-	para "It's the ultimate"
-	line "BALL! It'll catch"
+    	para "Use them on"
+    	line "legendary #MON."
 
-	para "any #MON with-"
-	line "out fail."
-
-	para "It's given only to"
-	line "recognized #MON"
-	cont "researchers."
-
-	para "I think you can"
-	line "make much better"
-
-	para "use of it than I"
-	line "can, <PLAY_G>!"
-	done
+    	para "Good luck, <PLAY_G>!"
+    	done
 
 ElmGiveTicketText1:
 	text "ELM: <PLAY_G>!"
@@ -1212,7 +1201,7 @@ ElmsLabMonEggText: ; unreferenced
 AideText_GiveYouPotion:
 	text "<PLAY_G>, I want"
 	line "you to have this"
-	cont "for your errand."
+	cont "for your safety."
 	done
 
 AideText_AlwaysBusy:
