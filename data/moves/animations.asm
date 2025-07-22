@@ -4694,7 +4694,7 @@ BattleAnim_SphereToss:
 	; Aura-Kugel wird geworfen (Seismic Toss-Globus)
 	anim_sound 0, 0, SFX_STRENGTH
 	anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 104, $1 ; Flugbewegung
-	anim_wait 112                 ; ↓ etwas kürzer warten
+	anim_wait 124                ; ↓ etwas kürzer warten
 	anim_incobj 1                ; Globus verschwindet
 
 	anim_wait 8                  ; kurze Verzögerung, damit Treffer-Effekt sauber folgt
