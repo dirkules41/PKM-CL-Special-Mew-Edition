@@ -4597,7 +4597,7 @@ BattleAnim_BeatUp:
 
 
 BattleAnim_AuraSphere:
-	anim_1gfx ANIM_GFX_PSYCHIC ; Psycho-Palette nutzen (ähnlich neutral/energiegeladen)
+	anim_1gfx ANIM_GFX_PSYCHIC ; Psycho-Palette nutzen
 
 	; Hintergrund-Effekte: Grau-Gelb, wie bei Psybeam
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
@@ -4618,7 +4618,7 @@ BattleAnim_AuraSphere:
 
 	; Großer Einschlag beim Gegner - Flash weiß + großer Hit-Sound
 	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
-	anim_sound 0, 1, SFX_HIT
+	anim_sound 0, 1, SFX_HIT_NORMAL
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
 	anim_wait 24
 
