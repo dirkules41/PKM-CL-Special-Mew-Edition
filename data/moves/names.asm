@@ -251,7 +251,7 @@ MoveNames::
 	li "ROCK SMASH"
 	li "WHIRLPOOL"
 	li "BEAT UP"
-	li "AURA BURST"
+	li "AURA SPHERE"
 	li "ETERNALPOWER"
-	li "SPHERE TOSS"
+	li "DARK PULSE"
 	assert_list_length NUM_ATTACKS
