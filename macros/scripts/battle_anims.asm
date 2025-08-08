@@ -301,7 +301,7 @@ anim_ret: MACRO
 ENDM
 
 
-const anim_setobjpal_command ; ea
+	const anim_setobjpal_command ; ea
 MACRO anim_setobjpal
 	db anim_setobjpal_command
 	db \1 ; pal index to set (0-7)
