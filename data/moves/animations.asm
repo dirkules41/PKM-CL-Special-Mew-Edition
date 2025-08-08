@@ -4601,7 +4601,7 @@ BattleAnim_AuraSphere:
     anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_WAVE
     
     ; Sanfter Startsound (Psycho-artig)
-    anim_sound 6, 2, SFX_PSYWAVE
+    anim_sound 6, 2, SFX_PSYCHIC
 
     ; Hintergrundfarben wechseln langsam (psycho-magisch)
     anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
