@@ -4597,35 +4597,19 @@ BattleAnim_BeatUp:
 
 
 BattleAnim_AuraSphere:
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BUBBLE
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BUBBLE
-	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_BUBBLE
-	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_YELLOW
-	anim_4gfx ANIM_GFX_VORTEX, ANIM_GFX_GLOW, ANIM_GFX_WIND_BG, ANIM_GFX_SWIRL
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_call BattleAnimSub_AgilityMinor
-	anim_sound 0, 1, SFX_OUTRAGE
-.loop
-	anim_obj ANIM_OBJ_SWIRL_SHORT, 44, 96, $0
-	anim_wait 8
-	anim_loop 4, .loop
-	anim_obj ANIM_OBJ_VORTEX, 44, 96, $0
-	anim_wait 64
-	anim_clearobjs
-	anim_sound 0, 1, SFX_SLUDGE_BOMB
-	anim_obj ANIM_OBJ_SHRINKING_GLOW, 44, 96, $4
-	anim_wait 10
-	anim_3gfx ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_AURA_SPHERE, ANIM_GFX_WIND_BG
-	anim_sound 0, 1, SFX_MEGA_PUNCH
-.loop2
-	anim_obj ANIM_OBJ_AURA_SPHERE, 64, 88, $6
-	anim_wait 12
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
-	anim_sound 0, 1, SFX_AEROBLAST
-	anim_obj ANIM_OBJ_BIG_GLOW_CLEAR, 136, 48, $0
-	anim_wait 8
-	anim_clearobjs
-	anim_wait 32
+	anim_1gfx ANIM_GFX_PSYCHIC
+	anim_obp0 $e0
+	anim_sound 0, 1, SFX_MEAN_LOOK
+	anim_obj ANIM_OBJ_MEAN_LOOK, 148, 32, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_MEAN_LOOK, 116, 64, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_MEAN_LOOK, 148, 64, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_MEAN_LOOK, 116, 32, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_MEAN_LOOK, 132, 48, $0
+	anim_wait 128
 	anim_ret
 
 
@@ -4667,22 +4651,19 @@ BattleAnim_EternalPower:
 
 
 BattleAnim_DarkPulse:
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DARK_PULSE
-	anim_1gfx ANIM_GFX_OBJECTS_2
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
-	anim_bgp $1b
-	anim_sound 0, 1, SFX_SPITE
-	anim_obj ANIM_OBJ_DARK_PULSE_E,  52, 92, $0
-	anim_obj ANIM_OBJ_DARK_PULSE_SE, 48, 96, $8
-	anim_obj ANIM_OBJ_DARK_PULSE_S,  44, 96, $10
-	anim_obj ANIM_OBJ_DARK_PULSE_SW, 40, 96, $18
-	anim_obj ANIM_OBJ_DARK_PULSE_W,  36, 92, $20
-	anim_obj ANIM_OBJ_DARK_PULSE_NW, 40, 88, $28
-	anim_obj ANIM_OBJ_DARK_PULSE_N,  44, 88, $30
-	anim_obj ANIM_OBJ_DARK_PULSE_NE, 48, 88, $38
-	anim_wait 96
-	anim_incbgeffect ANIM_BG_WHIRLPOOL
+	anim_1gfx ANIM_GFX_PSYCHIC
+	anim_obp0 $e0
+	anim_sound 0, 1, SFX_MEAN_LOOK
+	anim_obj ANIM_OBJ_MEAN_LOOK, 148, 32, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_MEAN_LOOK, 116, 64, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_MEAN_LOOK, 148, 64, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_MEAN_LOOK, 116, 32, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_MEAN_LOOK, 132, 48, $0
+	anim_wait 128
 	anim_ret
 
 
