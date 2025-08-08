@@ -4618,7 +4618,7 @@ BattleAnim_AuraSphere:
 
 	; Großer Einschlag beim Gegner - Flash weiß + großer Hit-Sound
 	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
-	anim_sound 0, 1, SFX_HIT_NORMAL
+	anim_sound 0, 1, SFX_SPARK
 	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
 	anim_wait 24
 
