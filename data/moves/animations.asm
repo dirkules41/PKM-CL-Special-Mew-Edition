@@ -4597,21 +4597,30 @@ BattleAnim_BeatUp:
 
 
 BattleAnim_AuraSphere:
-	anim_1gfx ANIM_GFX_PSYCHIC
-	anim_obp0 $e0
-	anim_sound 0, 1, SFX_MEAN_LOOK
-	anim_obj ANIM_OBJ_MEAN_LOOK, 148, 32, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_MEAN_LOOK, 116, 64, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_MEAN_LOOK, 148, 64, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_MEAN_LOOK, 116, 32, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_MEAN_LOOK, 132, 48, $0
-	anim_wait 128
-	anim_ret
+	; GFX: Psybeam + Wave Effekte für magische Aura
+    anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_WAVE
+    
+    ; Sanfter Startsound (Psycho-artig)
+    anim_sound 6, 2, SFX_PSYWAVE
 
+    ; Hintergrundfarben wechseln langsam (psycho-magisch)
+    anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+    anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+
+    ; Objekt: Wellen-„Kugel“ fliegt auf Gegner zu
+    anim_obj ANIM_OBJ_WAVE, 64, 104, $1
+    anim_wait 20
+
+    ; Kurze Verzögerung, dann Treffer-Impact
+    anim_wait 6
+    anim_sound 0, 1, SFX_PSYCHIC
+    anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
+
+    ; Bildschirmkurzschütteln vertikal
+    anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $10, $2, $10
+    anim_wait 16
+
+    anim_ret
 
 BattleAnim_EternalPower:
 	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
@@ -4649,23 +4658,34 @@ BattleAnim_EternalPower:
     anim_wait 10
     anim_ret
 
-
 BattleAnim_DarkPulse:
-	anim_1gfx ANIM_GFX_PSYCHIC
-	anim_obp0 $e0
-	anim_sound 0, 1, SFX_MEAN_LOOK
-	anim_obj ANIM_OBJ_MEAN_LOOK, 148, 32, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_MEAN_LOOK, 116, 64, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_MEAN_LOOK, 148, 64, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_MEAN_LOOK, 116, 32, $0
-	anim_wait 5
-	anim_obj ANIM_OBJ_MEAN_LOOK, 132, 48, $0
-	anim_wait 128
-	anim_ret
+	; GFX: Schattenartige Kugeln (Nacht-Magie)
+    anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_PSYCHIC
 
+    ; Mysteriöser Sound (ähnlich Metronom)
+    anim_sound 6, 2, SFX_METRONOME
+
+    ; Dunkle Hintergrundfarben flackern
+    anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
+    anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+
+    ; Bildschirmwackeln horizontal (Unruhe)
+    anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
+    anim_wait 12
+
+    ; Schwarze Kugeln fliegen auf Gegner zu (wie Seismic Toss Kugel)
+    anim_sound 0, 0, SFX_STRENGTH
+    anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 104, $1
+    anim_wait 24
+    anim_incobj 1
+
+    ; Treffer-Impact (schattiger Einschlag)
+    anim_sound 0, 1, SFX_MEGA_PUNCH
+    anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
+    anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $10, $2, $10
+    anim_wait 16
+
+    anim_ret
 
 BattleAnimSub_Drain:
 	anim_obj ANIM_OBJ_DRAIN, 132, 44, $0
