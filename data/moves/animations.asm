@@ -4597,62 +4597,86 @@ BattleAnim_BeatUp:
 
 
 BattleAnim_AuraSphere:
-	; GFX: Psybeam + Wave Effekte für magische Aura
-    anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_WAVE
-    
-    ; Sanfter Startsound (Psycho-artig)
-    anim_sound 6, 2, SFX_PSYCHIC
+	anim_1gfx ANIM_GFX_FIGHTING  ; Kampf-Palette für Aura Sphere
 
-    ; Hintergrundfarben wechseln langsam (psycho-magisch)
-    anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-    anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	; Hintergrund-Effekte: leicht pulsierend, Kampf-Farben
+	anim_bgeffect ANIM_BG_CYCLE_OBPALS_RED_AND_YELLOW, $0, $2, $0
+	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
 
-    ; Objekt: Wellen-„Kugel“ fliegt auf Gegner zu
-    anim_obj ANIM_OBJ_WAVE, 64, 104, $1
-    anim_wait 20
+	; 3 schnelle Energieschübe mit Psybeam Sound
+	anim_sound 6, 2, SFX_PSYBEAM
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
+	anim_wait 4
 
-    ; Kurze Verzögerung, dann Treffer-Impact
-    anim_wait 6
-    anim_sound 0, 1, SFX_PSYCHIC
-    anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
+	anim_sound 6, 2, SFX_PSYBEAM
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
+	anim_wait 4
 
-    ; Bildschirmkurzschütteln vertikal
-    anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $10, $2, $10
-    anim_wait 16
+	anim_sound 6, 2, SFX_PSYBEAM
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
+	anim_wait 4
 
-    anim_ret
+	; Großer Einschlag beim Gegner
+	anim_bgeffect ANIM_BG_FLASH_RED, $0, $4, $2
+	anim_sound 0, 1, SFX_HIT_FIGHTING
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
+	anim_wait 24
+
+	anim_ret
 
 BattleAnim_EternalPower:
 	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
+
     ; Erdbebenartiges Zittern für mehr Wucht
     anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $28, $2, $10
 
+    ; Untere Reihe (nach unten versetzt, y+8)
     anim_sound 0, 0, SFX_SPARK
-    anim_obj ANIM_OBJ_ANCIENTPOWER, 64, 108, $20
-    anim_wait 6
-    anim_sound 0, 0, SFX_SPARK
-    anim_obj ANIM_OBJ_ANCIENTPOWER, 75, 102, $20
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 64, 116, $20
     anim_wait 6
     anim_sound 0, 0, SFX_SPARK
-    anim_obj ANIM_OBJ_ANCIENTPOWER, 85, 97, $20
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 75, 110, $20
     anim_wait 6
     anim_sound 0, 0, SFX_SPARK
-    anim_obj ANIM_OBJ_ANCIENTPOWER, 96, 92, $20
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 85, 105, $20
+    anim_wait 6
+    anim_sound 0, 0, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 96, 100, $20
     anim_wait 6
     anim_sound 0, 1, SFX_SPARK
-    anim_obj ANIM_OBJ_ANCIENTPOWER, 106, 87, $20
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 106, 95, $20
     anim_wait 6
     anim_sound 0, 1, SFX_SPARK
-    anim_obj ANIM_OBJ_ANCIENTPOWER, 116, 82, $20
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 116, 90, $20
     anim_wait 6
     anim_sound 0, 1, SFX_SPARK
-    anim_obj ANIM_OBJ_ANCIENTPOWER, 126, 77, $20
-    anim_wait 6
-    anim_sound 0, 1, SFX_SPARK
-    anim_obj ANIM_OBJ_ANCIENTPOWER, 70, 88, $20  ; zusätzlicher Stein
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 126, 85, $20
     anim_wait 6
 
-    ; Größerer Einschlag
+    ; Obere Reihe (nach oben versetzt, y-8)
+    anim_sound 0, 0, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 64, 84, $20
+    anim_wait 6
+    anim_sound 0, 0, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 75, 78, $20
+    anim_wait 6
+    anim_sound 0, 0, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 85, 73, $20
+    anim_wait 6
+    anim_sound 0, 0, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 96, 68, $20
+    anim_wait 6
+    anim_sound 0, 1, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 106, 63, $20
+    anim_wait 6
+    anim_sound 0, 1, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 116, 58, $20
+    anim_wait 6
+    anim_sound 0, 1, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 126, 53, $20
+    anim_wait 6
+
+    ; Großer Einschlag in der Mitte
     anim_sound 0, 1, SFX_SPARK
     anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
     anim_wait 10
