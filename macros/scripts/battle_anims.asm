@@ -299,3 +299,11 @@ ENDM
 anim_ret: MACRO
 	db anim_ret_command
 ENDM
+
+
+const anim_setobjpal_command ; ea
+MACRO anim_setobjpal
+	db anim_setobjpal_command
+	db \1 ; pal index to set (0-7)
+	db \2 ; battle pal
+ENDM
