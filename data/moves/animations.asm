@@ -4683,32 +4683,22 @@ BattleAnim_EternalPower:
     anim_ret
 
 BattleAnim_DarkPulse:
-	; GFX: Schattenartige Kugeln (Nacht-Magie)
-    anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_PSYCHIC
+    anim_2gfx ANIM_GFX_EGG, ANIM_GFX_SMOKE    ; dunkle, mystische Effekte
+    anim_bgp $1b                              ; dunkler Hintergrund
 
-    ; Mysteriöser Sound (ähnlich Metronom)
-    anim_sound 6, 2, SFX_METRONOME
+.loop:
+    anim_sound 6, 2, SFX_SLUDGE_BOMB         ; dunkler Soundeffekt
+    anim_obj ANIM_OBJ_SHADOW_BALL, 64, 92, $2 ; erste dunkle Kugel
+    anim_wait 10
+    anim_obj ANIM_OBJ_SHADOW_BALL, 80, 88, $2 ; zweite Kugel leicht versetzt
+    anim_wait 10
+    anim_obj ANIM_OBJ_SHADOW_BALL, 96, 84, $2 ; dritte Kugel noch weiter versetzt
+    anim_wait 10
+    anim_loop 3, .loop                       ; 3x Kugeln hintereinander
 
-    ; Dunkle Hintergrundfarben flackern
-    anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-    anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-
-    ; Bildschirmwackeln horizontal (Unruhe)
-    anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
-    anim_wait 12
-
-    ; Schwarze Kugeln fliegen auf Gegner zu (wie Seismic Toss Kugel)
-    anim_sound 0, 0, SFX_STRENGTH
-    anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 104, $1
+    anim_sound 6, 2, SFX_SLUDGE_BOMB         ; Einschlag Sound
+    anim_obj ANIM_OBJ_BALL_POOF, 132, 56, $10 ; großer dunkler Einschlag
     anim_wait 24
-    anim_incobj 1
-
-    ; Treffer-Impact (schattiger Einschlag)
-    anim_sound 0, 1, SFX_MEGA_PUNCH
-    anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
-    anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $10, $2, $10
-    anim_wait 16
-
     anim_ret
 
 BattleAnimSub_Drain:
