@@ -2253,17 +2253,18 @@ MewtwoEvosAttacks:
 
 MewEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CONFUSION
-	db 5, KINESIS
+	db 1, POUND
+	db 5, CONFUSION
 	db 10, SWIFT
-	db 15, SPHERE_TOSS
-	db 20, PSYBEAM
-	db 25, FLAME_WHEEL
-	db 30, ANCIENTPOWER
-	db 35, AURA_BURST
+	db 15, ANCIENTPOWER
+	db 20, KINESIS
+	db 25, PSYBEAM
+	db 30, FAINT_ATTACK
+	db 35, AURA_SPHERE
 	db 40, PSYCHIC_M
-	db 45, ETERNALPOWER
-	db 50, SACRED_FIRE
+	db 45, DARK_PULSE
+	db 50, ETERNALPOWER
+	db 55, DARK_PULSE
 	db 0 ; no more level-up moves
 
 ChikoritaEvosAttacks:
