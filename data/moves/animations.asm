@@ -4597,7 +4597,6 @@ BattleAnim_BeatUp:
 
 
 BattleAnim_AuraSphere:
-	BattleAnim_AuraSphere:
 	anim_1gfx ANIM_GFX_PSYCHIC ; Psycho-Palette nutzen (ähnlich neutral/energiegeladen)
 
 	; Hintergrund-Effekte: Grau-Gelb, wie bei Psybeam
