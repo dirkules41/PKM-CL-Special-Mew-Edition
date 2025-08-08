@@ -253,9 +253,9 @@ BattleAnimations::
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
-	dw BattleAnim_AuraBurst
+	dw BattleAnim_AuraSphere
 	dw BattleAnim_EternalPower
-	dw BattleAnim_SphereToss
+	dw BattleAnim_DarkPulse
 	assert_table_length NUM_ATTACKS + 1
 	dw BattleAnim_SweetScent2
 	assert_table_length $100
@@ -4596,115 +4596,93 @@ BattleAnim_BeatUp:
 	anim_ret
 
 
-BattleAnim_AuraBurst:
-	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_PSYCHIC
-	anim_sound 6, 2, SFX_METRONOME
-
-	; Psybeam-Style Hintergrundeffekte
+BattleAnim_AuraSphere:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BUBBLE
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BUBBLE
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_BUBBLE
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_YELLOW
+	anim_4gfx ANIM_GFX_VORTEX, ANIM_GFX_GLOW, ANIM_GFX_WIND_BG, ANIM_GFX_SWIRL
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-
-	; Bildschirm wackelt wie bei Cross Chop
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $58, $2, $0
-	anim_wait 24
-
-	; Dynamischer Flugpfad: erst hoch, dann runter
-	anim_obj ANIM_OBJ_SWIFT, 64, 100, $4
-	anim_wait 6
-	anim_obj ANIM_OBJ_SWIFT, 68, 76, $4
-	anim_wait 6
-	anim_obj ANIM_OBJ_SWIFT, 60, 84, $4
-	anim_wait 6
-	anim_obj ANIM_OBJ_SWIFT, 70, 92, $4
-
-	; Dreifache WAVE-Psykraft
-	anim_sound 0, 1, SFX_PSYCHIC
-	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
-	anim_wait 6
-	anim_sound 0, 1, SFX_PSYCHIC
-	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
-	anim_wait 6
-	anim_sound 0, 1, SFX_PSYCHIC
-	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
+	anim_call BattleAnimSub_AgilityMinor
+	anim_sound 0, 1, SFX_OUTRAGE
+.loop
+	anim_obj ANIM_OBJ_SWIRL_SHORT, 44, 96, $0
 	anim_wait 8
-
-	anim_wait 16
+	anim_loop 4, .loop
+	anim_obj ANIM_OBJ_VORTEX, 44, 96, $0
+	anim_wait 64
+	anim_clearobjs
+	anim_sound 0, 1, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_SHRINKING_GLOW, 44, 96, $4
+	anim_wait 10
+	anim_3gfx ANIM_GFX_BIG_GLOW_CLEAR, ANIM_GFX_AURA_SPHERE, ANIM_GFX_WIND_BG
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+.loop2
+	anim_obj ANIM_OBJ_AURA_SPHERE, 64, 88, $6
+	anim_wait 12
+	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $08, $2, $0
+	anim_sound 0, 1, SFX_AEROBLAST
+	anim_obj ANIM_OBJ_BIG_GLOW_CLEAR, 136, 48, $0
+	anim_wait 8
+	anim_clearobjs
+	anim_wait 32
 	anim_ret
 
 
 BattleAnim_EternalPower:
-	; GFX: Rocks + Psychic Licht
-	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_PSYCHIC
+	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
+    ; Erdbebenartiges Zittern für mehr Wucht
+    anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $28, $2, $10
 
-	; Düstere Stimmung, wie bei Psybeam
+    anim_sound 0, 0, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 64, 108, $20
+    anim_wait 6
+    anim_sound 0, 0, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 75, 102, $20
+    anim_wait 6
+    anim_sound 0, 0, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 85, 97, $20
+    anim_wait 6
+    anim_sound 0, 0, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 96, 92, $20
+    anim_wait 6
+    anim_sound 0, 1, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 106, 87, $20
+    anim_wait 6
+    anim_sound 0, 1, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 116, 82, $20
+    anim_wait 6
+    anim_sound 0, 1, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 126, 77, $20
+    anim_wait 6
+    anim_sound 0, 1, SFX_SPARK
+    anim_obj ANIM_OBJ_ANCIENTPOWER, 70, 88, $20  ; zusätzlicher Stein
+    anim_wait 6
+
+    ; Größerer Einschlag
+    anim_sound 0, 1, SFX_SPARK
+    anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+    anim_wait 10
+    anim_ret
+
+
+BattleAnim_DarkPulse:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_DARK_PULSE
+	anim_1gfx ANIM_GFX_OBJECTS_2
 	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-
-	; Erdbebenartiges Zittern
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $28, $2, $10
-	anim_sound 0, 0, SFX_SPITE
-
-	; Felsen fliegen in Richtung Gegner
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 64, 104, $20
-	anim_wait 6
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 76, 94, $20
-	anim_wait 6
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 88, 84, $20
-	anim_wait 6
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 100, 74, $20
-	anim_wait 6
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 112, 64, $20
-	anim_wait 6
-	anim_obj ANIM_OBJ_ANCIENTPOWER, 124, 54, $20
-	anim_wait 6
-
-	; Dreifache WAVE-Psykraft
-	anim_sound 6, 2, SFX_PSYCHIC
-	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
-	anim_wait 6
-	anim_sound 6, 2, SFX_PSYCHIC
-	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
-	anim_wait 6
-	anim_sound 6, 2, SFX_PSYCHIC
-	anim_obj ANIM_OBJ_WAVE, 64, 88, $4
-	anim_wait 8
-
-	; Lichtblitz am Ende (große Energie)
-	anim_bgeffect ANIM_BG_FLASH_WHITE, $0, $4, $2
-	anim_wait 24
-
-	anim_ret
-
-
-BattleAnim_SphereToss:
-	; GFX: Psy-Effekte + Seismic Toss Kugel
-	anim_2gfx ANIM_GFX_GLOBE, ANIM_GFX_PSYCHIC
-
-	; Startsound (mystisch)
-	anim_sound 6, 2, SFX_METRONOME
-
-	; Hintergrundeffekte wie bei Psybeam
-	anim_bgeffect ANIM_BG_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_bgeffect ANIM_BG_CYCLE_BGPALS_INVERTED, $0, $4, $0
-
-	; Leichtes Bildschirmwackeln
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_X, $30, $2, $0
-	anim_wait 12
-
-	; Aura-Kugel wird geworfen (Seismic Toss-Globus)
-	anim_sound 0, 0, SFX_STRENGTH
-	anim_obj ANIM_OBJ_SEISMIC_TOSS, 64, 104, $1 ; Flugbewegung
-	anim_wait 124                ; ↓ etwas kürzer warten
-	anim_incobj 1                ; Globus verschwindet
-
-	anim_wait 8                  ; kurze Verzögerung, damit Treffer-Effekt sauber folgt
-
-	; Treffer-Impact
-	anim_sound 0, 1, SFX_MEGA_PUNCH
-	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 132, 40, $0
-	anim_bgeffect ANIM_BG_SHAKE_SCREEN_Y, $10, $2, $10
-	anim_wait 16
-
+	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
+	anim_bgp $1b
+	anim_sound 0, 1, SFX_SPITE
+	anim_obj ANIM_OBJ_DARK_PULSE_E,  52, 92, $0
+	anim_obj ANIM_OBJ_DARK_PULSE_SE, 48, 96, $8
+	anim_obj ANIM_OBJ_DARK_PULSE_S,  44, 96, $10
+	anim_obj ANIM_OBJ_DARK_PULSE_SW, 40, 96, $18
+	anim_obj ANIM_OBJ_DARK_PULSE_W,  36, 92, $20
+	anim_obj ANIM_OBJ_DARK_PULSE_NW, 40, 88, $28
+	anim_obj ANIM_OBJ_DARK_PULSE_N,  44, 88, $30
+	anim_obj ANIM_OBJ_DARK_PULSE_NE, 48, 88, $38
+	anim_wait 96
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
 	anim_ret
 
 
